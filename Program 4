@@ -1,0 +1,25 @@
+4. Write a progam to check whether a number is a pronic number or not . Use Ternary operator
+A number is said to be pronic number if it is a product of two consecutive numbers.
+
+#include <stdio.h>
+
+int main()
+{
+    int n,i,f=0;
+    printf("Enter the number\n");
+    scanf("%d",&n);
+    for(i=2;i<n;i++)
+    {
+        if(n%i==0)
+        {
+            if(i*(i+1)==n)
+              f=1;
+            
+        }
+    }
+    if(f==1)
+      printf("Pronic Number");
+    else
+      printf("Not a Pronic Number");
+    return 0;
+}
