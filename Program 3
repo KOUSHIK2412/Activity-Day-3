@@ -1,0 +1,41 @@
+3. C program to check if the given number is Happy Number or not !!
+A number is said to be happy if it yields 1 when replaced by the sum of squares
+of its digits repeatedly.
+If this process results in an endless cycle of numbers containing 4,
+then the number will be an unhappy number.
+Example
+Number = 32
+3^2+ 2^2 = 13
+1^2 + 3^2 = 10
+1^2 + 0^2 = 1 Happy Number
+
+
+#include <stdio.h>
+int sumofsquare(int num)
+{
+    int sum=0;
+    while(num!=0)
+    {
+        sum=sum+(num%10)*(num%10);
+        num=num/10;
+    }
+    return sum;
+}
+int main()
+{
+    int num;
+    printf("Enter the number\n");
+    scanf("%d",&num);
+    int sum=sumofsquare(num);
+    while(sum!=1 && sum!=4)
+    {
+        sum=sumofsquare(sum);
+    }
+    
+    if(sum==1)
+        printf(" Happy number \n");
+    else
+        printf(" Not a Happy number \n");
+
+    return 0;
+}
